@@ -1,0 +1,15 @@
+$ flex art_expr.l
+$ bison -d art_expr.y
+$ gcc lex.yy.c art_expr.tab.c -o art_expr -lfl
+
+--- Run 1: valid expression ---
+$ ./art_expr
+Enter the Expression
+a+b*c-d/e
+Valid Expression
+
+--- Run 2: invalid expression ---
+$ ./art_expr
+Enter the Expression
+a=b
+Invalid Expression

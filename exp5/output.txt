@@ -1,0 +1,21 @@
+$ flex control.l
+$ bison -d control.y
+$ gcc lex.yy.c control.tab.c -o control -lfl
+
+--- Run 1: valid if statement ---
+$ ./control
+Enter a C control structure syntax:
+if (x < 5) { y = 10; }
+Valid control structure syntax.
+
+--- Run 2: valid while loop ---
+$ ./control
+Enter a C control structure syntax:
+while (x <= 10) { x = x + 1; }
+Valid control structure syntax.
+
+--- Run 3: invalid syntax ---
+$ ./control
+Enter a C control structure syntax:
+if x < 5
+Invalid control structure syntax.

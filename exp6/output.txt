@@ -1,0 +1,23 @@
+$ flex cal.l
+$ bison -d cal.y
+$ gcc lex.yy.c cal.tab.c -o calc -lfl
+
+$ ./calc
+Enter the expression:
+2+2
+Answer: 4
+
+$ ./calc
+Enter the expression:
+10*3-5/5
+Answer: 29
+
+$ ./calc
+Enter the expression:
+(4+6)*2
+Answer: 20
+
+$ ./calc
+Enter the expression:
+-5+3
+Answer: -2

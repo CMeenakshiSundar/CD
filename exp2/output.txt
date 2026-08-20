@@ -1,0 +1,29 @@
+$ flex lexer.l
+$ gcc lex.yy.c -o lexer -lfl
+
+$ cat iplex.c
+#include<stdio.h>
+void main()
+{
+    int x;
+    x = 10;
+}
+
+$ ./lexer iplex.c
+Preprocessor Directive : #include
+Header File            : <stdio.h>
+Keyword                : void
+Identifier             : main
+Delimiter              : (
+Delimiter              : )
+Delimiter              : {
+Keyword                : int
+Identifier             : x
+Delimiter              : ;
+Identifier             : x
+Operator               : =
+Number                 : 10
+Delimiter              : ;
+Delimiter              : }
+
+End of file

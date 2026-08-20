@@ -1,0 +1,21 @@
+$ flex valvar.l
+$ bison -d valvar.y
+$ gcc lex.yy.c valvar.tab.c -o valvar -lfl
+
+--- Run 1: valid (letters only) ---
+$ ./valvar
+Enter the variable:
+add
+Valid variable
+
+--- Run 2: valid (letters + digits) ---
+$ ./valvar
+Enter the variable:
+add1
+Valid variable
+
+--- Run 3: invalid (starts with digit) ---
+$ ./valvar
+Enter the variable:
+1add
+Invalid variable
